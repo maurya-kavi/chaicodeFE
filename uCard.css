@@ -1,0 +1,147 @@
+
+.rightContent{
+    display: flex;
+    width:40%;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+#rcVideo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+}
+
+#rcVideo img{
+    width: 100%;
+    border-radius: 10px;
+}
+#playBtn{
+    position: absolute;
+    background: whitesmoke;
+    border: none;
+    border-radius: 40px;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.rcTabs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+
+}
+.tab{
+    border-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    background: #fff;
+}
+.rcSection{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+#rcDescription{
+    font-size: 14px;
+}
+.rcprice{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0px;
+}
+#rcDiscountedPrice{
+    font-size: 25px;
+    font-weight: bold;
+
+}
+#rcOriginalPrice{
+    font-size: 18px;
+    color: gray;
+}
+#rcDiscount{
+    font-size: 18px;
+
+}
+.rcTimer{
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.rcTimer span{
+    font-size: 16px;
+}
+#rcCart{
+    border: none;
+    background-color: blue;
+    padding: 10px 0px;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+
+}
+#rcBuy{
+    border: none;
+    background-color: #fff;
+    padding: 10px 0px;
+    font-size: 18px;
+    color:blue;
+    border:1px solid blueviolet;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+
+#rcTeams{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+#rcTeams p{
+    font-size: 22px;
+    font-weight: bold;
+}
+#rcTeams ul li{
+    font-size: 18px;
+    list-style: none;
+}
+
+/* // below code is copied from style2.css */
+
+.rcTabs {
+    /* display: flex;
+    justify-content: space-around; */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .rcTabs .tab {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+.rcTabs .tab.active {
+    border-bottom: 3px solid #7d4eff;
+    color: #7d4eff;
+  }
+  
+  .rcSection {
+    display: none;
+    padding: 16px;
+  }
+  
+  .rcSection.active {
+    display: block;
+  }
