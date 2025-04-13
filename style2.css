@@ -1,136 +1,255 @@
 .rightContent {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    font-family: sans-serif;
-    border: 1px solid black;
-    border-radius: 10px;
-  }
-  
-  .rccard {
-    width: 320px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    font-family: 'Inter', sans-serif;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    animation: fadeIn 0.6s ease;
+}
+
+.rccard {
+    width: 340px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-  }
-  
-  #rcVideo {
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.rccard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+#rcVideo {
     position: relative;
-    height: 180px;
-    background: #ddd;
+    height: 200px;
+    background: rgba(15, 23, 42, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  #rcVideo img {
+    overflow: hidden;
+}
+
+#rcVideo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  #playBtn {
+    transition: transform 0.3s ease;
+}
+
+#rcVideo:hover img {
+    transform: scale(1.05);
+}
+
+#playBtn {
     position: absolute;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(139, 92, 246, 0.9);
     color: white;
     font-size: 32px;
     border: none;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     cursor: pointer;
-  }
-  
-  .rcTabs {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+#playBtn:hover {
+    background: #8b5cf6;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.rcTabs {
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .rcTabs .tab {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.rcTabs .tab {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
     background: none;
     border: none;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
-  }
-  
-  .rcTabs .tab.active {
-    border-bottom: 3px solid #7d4eff;
-    color: #7d4eff;
-  }
-  
-  .rcSection {
-    display: none;
-    padding: 16px;
-  }
-  
-  .rcSection.active {
-    display: block;
-  }
-  
-  .rcprice {
-    display: flex;
-    gap: 10px;
-    align-items: baseline;
-  }
-  
-  #rcDiscountedPrice {
-    font-weight: bold;
-    font-size: 24px;
-  }
-  
-  #rcOriginalPrice {
-    color: #888;
-  }
-  
-  #rcDiscount {
-    color: green;
-  }
-  
-  .rcTimer {
-    margin: 10px 0;
-    color: red;
-    font-weight: bold;
-  }
-  
-  #rcCart, #rcBuy {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  #rcCart {
-    background-color: #7d4eff;
-    color: white;
-  }
-  
-  #rcBuy {
-    background-color: white;
-    border: 2px solid #7d4eff;
-    color: #7d4eff;
-  }
+    transition: all 0.3s ease;
+    color: #94a3b8;
+    font-size: 15px;
+}
 
-#rcTeams{
-    /* display: block; */
-    /* flex-direction: column;
-    justify-content: center;
-    align-content:center ; */
-    justify-content: center;
-    /* align-items: center; */
+.rcTabs .tab:hover {
+    color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
 }
-#rcTeams p{
-    font-size: 22px;
-    font-weight: bold;
+
+.rcTabs .tab.active {
+    border-bottom: 3px solid #8b5cf6;
+    color: #8b5cf6;
 }
-#rcTeams ul li{
+
+.rcSection {
+    display: none;
+    padding: 24px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rcSection.active {
+    display: block;
+}
+
+#rcPersonal {
+    display: none;
+}
+
+#rcPersonal.active {
+    display: block;
+}
+
+#rcTeams {
+    display: none;
+    padding: 20px;
+}
+
+#rcTeams.active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#rcTeams p {
     font-size: 18px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 15px;
+}
+
+#rcTeams ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#rcTeams ul li {
+    font-size: 15px;
     list-style: none;
+    padding: 12px 16px;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+#rcTeams ul li:hover {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+    transform: translateX(5px);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.rcprice {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    margin: 20px 0;
+}
+
+#rcDiscountedPrice {
+    font-weight: 700;
+    font-size: 28px;
+    color: #e2e8f0;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#rcOriginalPrice {
+    color: #64748b;
+    text-decoration: line-through;
+    font-size: 16px;
+}
+
+#rcDiscount {
+    color: #10b981;
+    font-weight: 600;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.rcTimer {
+    margin: 15px 0;
+    color: #f87171;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    background: rgba(248, 113, 113, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+#rcCart, #rcBuy {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+#rcCart {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+}
+
+#rcCart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+}
+
+#rcBuy {
+    background: transparent;
+    border: 2px solid #8b5cf6;
+    color: #8b5cf6;
+}
+
+#rcBuy:hover {
+    background: rgba(139, 92, 246, 0.1);
+    transform: translateY(-2px);
 }
 
