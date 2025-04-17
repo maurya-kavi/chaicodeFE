@@ -1,136 +1,333 @@
 .rightContent {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    font-family: sans-serif;
-    border: 1px solid black;
-    border-radius: 10px;
-  }
-  
-  .rccard {
-    width: 320px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    font-family: 'Inter', sans-serif;
+    background: rgba(20, 20, 25, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.rccard {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(15, 15, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-  }
-  
-  #rcVideo {
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.rccard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(125, 78, 255, 0.3);
+}
+
+#rcVideo {
     position: relative;
-    height: 180px;
-    background: #ddd;
+    height: 200px;
+    background: rgba(10, 10, 15, 0.95);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  #rcVideo img {
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#rcVideo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  #playBtn {
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+#rcVideo:hover img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+#playBtn {
     position: absolute;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(125, 78, 255, 0.9);
     color: white;
     font-size: 32px;
     border: none;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     cursor: pointer;
-  }
-  
-  .rcTabs {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+#playBtn:hover {
+    background: #7d4eff;
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(125, 78, 255, 0.3);
+}
+
+.rcTabs {
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .rcTabs .tab {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 15, 20, 0.95);
+}
+
+.rcTabs .tab {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
     background: none;
     border: none;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
-  }
-  
-  .rcTabs .tab.active {
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+}
+
+.rcTabs .tab:hover {
+    color: #7d4eff;
+    background: rgba(125, 78, 255, 0.1);
+}
+
+.rcTabs .tab.active {
     border-bottom: 3px solid #7d4eff;
     color: #7d4eff;
-  }
-  
-  .rcSection {
+}
+
+.rcSection {
     display: none;
-    padding: 16px;
-  }
-  
-  .rcSection.active {
+    padding: 24px;
+    animation: fadeIn 0.3s ease;
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rcSection.active {
     display: block;
-  }
-  
-  .rcprice {
-    display: flex;
-    gap: 10px;
-    align-items: baseline;
-  }
-  
-  #rcDiscountedPrice {
-    font-weight: bold;
-    font-size: 24px;
-  }
-  
-  #rcOriginalPrice {
-    color: #888;
-  }
-  
-  #rcDiscount {
-    color: green;
-  }
-  
-  .rcTimer {
-    margin: 10px 0;
-    color: red;
-    font-weight: bold;
-  }
-  
-  #rcCart, #rcBuy {
+}
+
+#rcDescription {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+#rcDiscountedPrice {
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+    text-shadow: 0 0 20px rgba(125, 78, 255, 0.3);
+}
+
+#rcOriginalPrice {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#rcDiscount {
+    background: rgba(0, 184, 148, 0.1);
+    border: 1px solid rgba(0, 184, 148, 0.2);
+    color: #00b894;
+}
+
+.rcTimer {
+    color: #ff7675;
+    background: rgba(255, 118, 117, 0.1);
+    border: 1px solid rgba(255, 118, 117, 0.2);
+}
+
+#rcCart, #rcBuy {
     width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    font-weight: bold;
+    padding: 14px;
+    margin-top: 12px;
+    font-weight: 600;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-  }
-  
-  #rcCart {
-    background-color: #7d4eff;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+#rcCart {
+    background: linear-gradient(135deg, #7d4eff, #6a3eff);
     color: white;
-  }
-  
-  #rcBuy {
-    background-color: white;
+    border: none;
+    box-shadow: 0 5px 20px rgba(125, 78, 255, 0.2);
+}
+
+#rcCart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(125, 78, 255, 0.3);
+}
+
+#rcBuy {
+    background: transparent;
     border: 2px solid #7d4eff;
     color: #7d4eff;
-  }
+}
 
-#rcTeams{
-    /* display: block; */
-    /* flex-direction: column;
-    justify-content: center;
-    align-content:center ; */
-    justify-content: center;
-    /* align-items: center; */
+#rcBuy:hover {
+    background: rgba(125, 78, 255, 0.1);
+    transform: translateY(-2px);
 }
-#rcTeams p{
-    font-size: 22px;
-    font-weight: bold;
+
+#rcTeams {
+    display: none;
+    padding: 24px;
+    animation: fadeIn 0.3s ease;
 }
-#rcTeams ul li{
+
+#rcTeams p {
     font-size: 18px;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+#rcTeams ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#rcTeams ul li {
+    font-size: 15px;
     list-style: none;
+    padding: 12px 16px;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(10, 10, 15, 0.95);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#rcTeams ul li:hover {
+    background: rgba(125, 78, 255, 0.1);
+    color: #7d4eff;
+    border-color: rgba(125, 78, 255, 0.3);
+    transform: translateX(5px);
+}
+
+#rcPersonal {
+    display: none;
+    padding: 24px;
+    animation: fadeIn 0.3s ease;
+}
+
+@media screen and (max-width: 1200px) {
+    .rightContent {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .rccard {
+        max-width: 100%;
+    }
+
+    #rcVideo {
+        height: 240px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rightContent {
+        padding: 15px;
+    }
+
+    #rcVideo {
+        height: 200px;
+    }
+
+    .rcTabs .tab {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #rcDiscountedPrice {
+        font-size: 24px;
+    }
+
+    #rcOriginalPrice {
+        font-size: 14px;
+    }
+
+    #rcDiscount {
+        font-size: 12px;
+    }
+
+    .rcTimer {
+        font-size: 13px;
+    }
+
+    #rcCart, #rcBuy {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #rcTeams ul li {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .rightContent {
+        padding: 10px;
+    }
+
+    #rcVideo {
+        height: 180px;
+    }
+
+    #playBtn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .rcTabs .tab {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .rcSection {
+        padding: 15px;
+    }
+
+    #rcDiscountedPrice {
+        font-size: 22px;
+    }
+
+    #rcOriginalPrice {
+        font-size: 13px;
+    }
+
+    .rcTimer {
+        padding: 6px 10px;
+    }
+
+    #rcCart, #rcBuy {
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
 }
 
