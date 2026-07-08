@@ -2,7 +2,7 @@
 
 > "Crafting layouts line by line, capturing the raw essence of UI from scratch."
 
-`chaicodeFE` is a foundational frontend project built entirely by hand. Created a year ago as a dedicated practice playground, this repository represents a pure, hands-on deep dive into core web layouts and UI design—completely free of AI assistance or external UI frameworks.
+`chaicodeFE` is a foundational frontend project built entirely by hand. Created in intial phase of learning web development from scratch as a dedicated practice playground, this repository represents a pure, hands-on deep dive into core web layouts and UI design—completely free of AI assistance or external UI frameworks.
 
 ---
 
